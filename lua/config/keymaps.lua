@@ -4,19 +4,11 @@
 
 -- Jump and center
 local centerOpts = { noremap = true, silent = true }
-vim.keymap.set("n", "<C-u>", "<C-u>zz", centerOpts)
-vim.keymap.set("n", "<C-d>", "<C-d>zz", centerOpts)
-vim.keymap.set("n", "{", "{zz", centerOpts)
-vim.keymap.set("n", "}", "}zz", centerOpts)
-vim.keymap.set("n", "N", "Nzz", centerOpts)
-vim.keymap.set("n", "n", "nzz", centerOpts)
-vim.keymap.set("n", "G", "Gzz", centerOpts)
-vim.keymap.set("n", "gg", "ggzz", centerOpts)
-vim.keymap.set("n", "<C-i", "<C-i>zz", centerOpts)
-vim.keymap.set("n", "<C-o>", "<C-o>zz", centerOpts)
-vim.keymap.set("n", "%", "%zz", centerOpts)
-vim.keymap.set("n", "*", "*zz", centerOpts)
-vim.keymap.set("n", "#", "#zz", centerOpts)
+local mappings = { "<C-u>", "<C-d>", "{", "}", "N", "n", "G", "gg", "<C-i>", "<C-o>", "%", "*", "#" }
+
+for _, key in ipairs(mappings) do
+  vim.api.nvim_set_keymap("n", key, key .. "zz", centerOpts)
+end
 
 -- Auto center after search
 vim.api.nvim_create_autocmd("CmdLineLeave", {
