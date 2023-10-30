@@ -16,3 +16,10 @@ vim.api.nvim_create_autocmd("CmdLineLeave", {
     vim.api.nvim_feedkeys("zz", "n", false)
   end,
 })
+
+-- Disable lazygit keymaps
+vim.keymap.del("n", "<leader>gg")
+vim.keymap.del("n", "<leader>gG")
+
+-- Not sure why I have to put this here
+vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>")
