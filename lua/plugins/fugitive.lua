@@ -2,7 +2,8 @@ return {
   {
     "tpope/vim-fugitive",
     keys = {
-      { "<leader>gG", "<cmd>lua print('test?')<cr>", desc = "Git fugitive?" },
+      { "<leader>gg", "<cmd>lua print('test?')<cr>", desc = "Git fugitive?" },
+      { "<leader>gP", "<cmd>Git push<cr>", desc = "Git Pushfugitive?" },
     },
     lazy = false,
     cmd = "Git",
