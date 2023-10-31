@@ -3,3 +3,7 @@
 -- Add any additional options here
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
+
+if vim.loop.os_uname().sysname == "Windows_NT" then
+  vim.opt.shell = "pwsh.exe"
+end
