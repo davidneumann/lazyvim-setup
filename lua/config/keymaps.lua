@@ -19,7 +19,14 @@ vim.api.nvim_create_autocmd("CmdLineLeave", {
 
 -- Disable lazygit keymaps
 vim.keymap.del("n", "<leader>gg")
-vim.keymap.del("n", "<leader>gG")
+-- vim.keymap.del("n", "<leader>gG")
 
 -- Not sure why I have to put this here
 vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>")
+
+-- Noop some keys that conflict my with tiling window manager
+vim.keymap.set({ "n", "v", "x" }, "<S-A-Return>", "<nop>")
+vim.keymap.set({ "n", "v", "x" }, "<C-A-h>", "<nop>")
+vim.keymap.set({ "n", "v", "x" }, "<C-A-l>", "<nop>")
+vim.keymap.set({ "n", "v", "x" }, "<C-A-j>", "<nop>")
+vim.keymap.set({ "n", "v", "x" }, "<C-A-k>", "<nop>")
